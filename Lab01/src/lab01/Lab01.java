@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package lab01;
+import java.util.Scanner;
 
 /**
  *
@@ -15,9 +16,40 @@ public class Lab01 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-    System.out.println("Hello inny");
         
+        System.out.println("Count: ");
+        Scanner input = new Scanner(System.in);
+        int n = Integer.parseInt(input.nextLine());
+        
+        float[] arr = new float[n];
+                
+        
+        for(int i = 0; i<n; i++){
+            float tmp = 0;
+            int where = i+1;
+            System.out.println("Number " + where  + ": ");
+            Scanner dfinput = new Scanner(System.in);
+            tmp = Float.parseFloat(dfinput.nextLine());
+            arr[i] = tmp;
+        }
+
+        //a
+        float a = 0;
+        for (int i = 0; i < n; i++) {
+            a += arr[i];
+        }
+        System.out.println("a) " + a);
+        
+        
+        //b
+        float b = 1;
+        for (int i = 0; i < n; i++) {
+            b *= arr[i];
+        }
+        System.out.println("b) " + b);
+
+        //c
+        s
     }
     
 }
