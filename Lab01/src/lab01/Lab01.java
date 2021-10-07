@@ -49,7 +49,33 @@ public class Lab01 {
         System.out.println("b) " + b);
 
         //c
-        s
+        float c = 0;
+        for (int i = 0; i < n; i++) {
+            c += Math.abs(arr[i]);
+        }
+        System.out.println("c) " + c);
+        
+        //d
+        float d = 0;
+        for (int i = 0; i < n; i++) {
+            d += Math.sqrt(Math.abs(arr[i]));
+        }
+        System.out.println("d) " + d);
+        
+        //e
+        float e = 1;
+        for (int i = 0; i < n; i++) {
+            e *= Math.abs(arr[i]);
+        }
+        System.out.println("e) " + e);
+        
+        
+        //f
+        float f = 0;
+        for (int i = 0; i < n; i++) {
+            f += arr[i]*arr[i];
+        }
+        System.out.println("f) " + f);
     }
     
 }
