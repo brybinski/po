@@ -78,12 +78,13 @@ public class Zadanie5 {
 
 public class Zadanie6 {
     public static void main(String[] args){
-        System.out.println("  /////  ");
-        System.out.println(" +\"\"\"\"\"+ ");
-        System.out.println("(| o o |)");
-        System.out.println("  | ^ |  ");
-        System.out.println(" | \'_\' |");
-        System.out.println(" +_____+ ");
+        System.out.println("""
+                          /////
+                         +\"\"\"\"\"+
+                        (| o o |)
+                          | ^ |
+                         | '_' |
+                         +_____+""");
     }
 }
 
@@ -105,40 +106,39 @@ public class Zadanie7 {
 
 public class Zadanie8 {
     public static void main(String[] args) {
-        System.out.println("   +   ");
-        System.out.println("  + +  ");
-        System.out.println(" +   + ");
-        System.out.println("+_____+");
-        System.out.println("| .—. |");
-        System.out.println("| | | |");
-        System.out.println("+_+_+_+");
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
+        System.out.println("""
+                                   +
+                                  + +
+                                 +   +
+                                +_____+
+                                | .—. |
+                                | | | |
+                                +_+_+_+""");
     }
 }
 
 
 
+
 public class Zadanie9 {
     public static void main(String[] args) {
-        System.out.println("         _nnnn_                      ");
-        System.out.println("        dGGGGMMb     ,\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\".");
-        System.out.println("       @p~qp~~qMb    | sudo rm /* -r --no-preserve-root |");
-        System.out.println("       M|@||@) M|   _;..................................'");
-        System.out.println("       @,----.JM| -'");
-        System.out.println("      JS^\\__/  qKL");
-        System.out.println("     dZP        qKRb");
-        System.out.println("    dZP          qKKb");
-        System.out.println("   fZP            SMMb");
-        System.out.println("   HZM            MMMM");
-        System.out.println("   FqM            MMMM");
-        System.out.println(" __| \".        |\\dS\"qML");
-        System.out.println(" |    `.       | `' \\Zq");
-        System.out.println("_)      \\.___.,|     .'");
-        System.out.println("\\____   )MMMMMM|   .'");
-        System.out.println("     `-'       `--'");
+        System.out.println("""
+                 _nnnn_                      
+                dGGGGMMb     ,\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\".
+               @p~qp~~qMb    | sudo rm /* -r --no-preserve-root |
+               M|@||@) M|   _;..................................'
+               @,----.JM| -'
+              JS^\\__/  qKL
+             dZP        qKRb
+            dZP          qKKb
+           fZP            SMMb
+           HZM            MMMM
+           FqM            MMMM
+         __| \".        |\\dS\"qML
+         |    `.       | `' \\Zq
+        _)      \\.___.,|     .'
+        \\____   )MMMMMM|   .'
+             `-'       `--'""");
     }
 }
 
@@ -155,34 +155,36 @@ public class Zadanie10 {
 
 public class Zadanie11 {
     public static void main(String[] args) {
-        System.out.println("* * * (Ita\u00ADliam! Ita\u00ADliam!) - Cyprian Kamil Norwid\n");
-        System.out.print("Ita\u00ADliam! Ita\u00ADliam!\n" +
-                "Pod la\u00ADtyń\u00ADskich ża\u00ADgli cie\u00ADniem,\n" +
-                "My\u00ADśli moja, płyń z anio\u00ADłem.\n" +
-                "Płyń, jak kie\u00ADdyś ja pły\u00ADną\u00ADłem:\n" +
-                "Za wspo\u00ADmnie\u00ADniem — płyń wspo\u00ADmnie\u00ADniem...\n" +
-                "\n" +
-                "Do\u00ADoko\u00ADła mo\u00ADrze — mo\u00ADrze —\n" +
-                "Jak błę\u00ADki\u00ADtu strop bez koń\u00ADca.\n" +
-                "O prze\u00ADja\u00ADsne — peł\u00ADne słoń\u00ADca!\n" +
-                "Łodzi! Wio\u00ADseł!... Szczęść ci Boże...\n" +
-                "\n" +
-                "Płyń — a nie wróć-że mi z ża\u00ADlem\n" +
-                "Od tych lau\u00ADrów tam ró\u00ADżo\u00ADwych,\n" +
-                "Gdzie Tass śpie\u00ADwał Je\u00ADru\u00ADza\u00ADlem,\n" +
-                "I od mo\u00ADich dni — lau\u00ADro\u00ADwych...\n" +
-                "\n" +
-                "O, po skar\u00ADby cię wy\u00ADsła\u00ADłem:\n" +
-                "Cóż, gdy wró\u00ADcisz mi z tę\u00ADsk\u00ADno\u00ADtą?\n" +
-                "Wiem to, ale pro\u00ADszę o to —\n" +
-                "Niech za\u00ADpła\u00ADczę, że pła\u00ADka\u00ADłem...\n" +
-                "\n" +
-                "Pod la\u00ADtyń\u00ADskich ża\u00ADgli cie\u00ADniem,\n" +
-                "My\u00ADśli moja, płyń z anio\u00ADłem.\n" +
-                "Płyń, jak kie\u00ADdyś ja pły\u00ADną\u00ADłem:\n" +
-                "...Za wspo\u00ADmnie\u00ADniem — płyń wspo\u00ADmnie\u00ADniem...");
+        System.out.println("* * * (Italiam! Italiam!) - Cyprian Kamil Norwid\n");
+        System.out.print("""
+                Italiam! Italiam!
+                Pod latyńskich żagli cieniem,
+                Myśli moja, płyń z aniołem.
+                Płyń, jak kiedyś ja płynąłem:
+                Za wspomnieniem — płyń wspomnieniem...
+
+                Dookoła morze — morze —
+                Jak błękitu strop bez końca.
+                O przejasne — pełne słońca!
+                Łodzi! Wioseł!... Szczęść ci Boże...
+
+                Płyń — a nie wróć-że mi z żalem
+                Od tych laurów tam różowych,
+                Gdzie Tass śpiewał Jeruzalem,
+                I od moich dni — laurowych...
+
+                O, po skarby cię wysłałem:
+                Cóż, gdy wrócisz mi z tęsknotą?
+                Wiem to, ale proszę o to —
+                Niech zapłaczę, że płakałem...
+
+                Pod latyńskich żagli cieniem,
+                Myśli moja, płyń z aniołem.
+                Płyń, jak kiedyś ja płynąłem:
+                ...Za wspomnieniem — płyń wspomnieniem...""");
     }
 }
+
 
 
 public class Zadanie12 {
