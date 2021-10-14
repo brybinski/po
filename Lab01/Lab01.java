@@ -101,6 +101,11 @@ public class Lab01 {
 
         //ex 2
         System.out.print("\n");
+        float first = arr[0];
+        for(int i = 0; i<n-1;i++){
+            arr[i] = arr[i+1];
+        }
+        arr[n-1] = first;
         for(int i = 0; i<n;i++){
             System.out.print(arr[i] + ", ");
         }
