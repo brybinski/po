@@ -125,13 +125,13 @@ public class Lab01 {
 //            tmp1 = Int.parseInt(dfinput.nextLine());
 //            arr[i] = tmp1;
 //        }
-        
+
         int n2 = 6;
         int[] arr2 = {-1, 4, -1, 17, 19, 15};
-        
+
         //Zad1
         //a
-        
+
         int a2 = 0;
         for (int i: arr2) {
             if(i % 2 == 0)
@@ -178,8 +178,8 @@ public class Lab01 {
                 e2++;
         }
         System.out.println("e) "+ e2);
-        
-        
+
+
         //f
 
         int f2 = 0;
@@ -189,7 +189,7 @@ public class Lab01 {
         }
         System.out.println("f) "+f2);
 
-        
+
         //g
         int g2 = 0;
         for (int i = 0; i< n2; i++) {
