@@ -34,8 +34,8 @@ public class Lab01 {
 //            arr[i] = tmp1;
 //        }
 
-        int n = 4;
-        double[] arr = {1.52, 23.4, 123.533, 353.123};
+        int n = 6;
+        double[] arr = {1.52, 23.4, 123.533, 353.123, -123.34 , 0};
         //a
         float a = 0;
         for (int i = 0; i < n; i++) {
@@ -127,7 +127,7 @@ public class Lab01 {
 //        }
         
         int n2 = 6;
-        int[] arr2 = {3, 4, 5, 17, 19, 15};
+        int[] arr2 = {-1, 4, -1, 17, 19, 15};
         
         //Zad1
         //a
@@ -184,9 +184,58 @@ public class Lab01 {
 
         int f2 = 0;
         for (int i = 0; i< n2; i++) {
-            if(Math.sqrt(i) % 2 == 0)
+            if((i+1) % 2 != 0 && arr2[i] % 2 ==0)
                 f2++;
         }
         System.out.println("f) "+f2);
+
+        
+        //g
+        int g2 = 0;
+        for (int i = 0; i< n2; i++) {
+            if(arr2[i] >= 0 && arr2[i] % 2 == 0)
+                g2++;
+        }
+        System.out.println("g) "+g2);
+
+
+        //h
+        int h2 = 0;
+        for (int i = 0; i < n2; i++) {
+            if(Math.abs(arr2[i]) < (i+1)*(i+1));
+                h2++;
+        }
+        System.out.println("h) "+h2);
+
+
+        //Zadanie2
+        double ex2 = 0;
+        for (double i:
+             arr) {
+            if(i > 0)
+                ex2 += i;
+        }
+        System.out.println("\nZad2\n  " + (ex2*2));
+
+
+        //Zadanie3
+        int ex3_z = 0;
+        int ex3 = 0;
+        for (double i:
+                arr) {
+            if(i == 0){
+                ex3_z ++;
+                continue;
+            }
+            if(i < 0){
+                ex3++;
+            }
+        }
+        System.out.println("\nZad3\nzero: " + (ex3_z)+ "\nnegative: "+ ex3);
+
+
+
+
+
     }
 }
