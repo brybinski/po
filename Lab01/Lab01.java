@@ -18,24 +18,24 @@ public class Lab01 {
 
     public static void main(String[] args) {
 
-//        System.out.println("Count: ");
-//        Scanner input = new Scanner(System.in);
-//        int n = Integer.parseInt(input.nextLine());
-//
-//        float[] arr = new float[n];
-//
-//
-//        for(int i = 0; i < n; i++){
-//            float tmp1;
-//            int where = i+1;
-//            System.out.println("Number " + where  + ": ");
-//            Scanner dfinput = new Scanner(System.in);
-//            tmp1 = Float.parseFloat(dfinput.nextLine());
-//            arr[i] = tmp1;
-//        }
+        System.out.println("Count: ");
+        Scanner input = new Scanner(System.in);
+        int n = Integer.parseInt(input.nextLine());
 
-        int n = 6;
-        double[] arr = {1.52, 23.4, 123.533, 353.123, -123.34 , 0};
+        float[] arr = new float[n];
+
+
+        for(int i = 0; i < n; i++){
+            float tmp1;
+            int where = i+1;
+            System.out.println("Number " + where  + ": ");
+            Scanner dfinput = new Scanner(System.in);
+            tmp1 = Float.parseFloat(dfinput.nextLine());
+            arr[i] = tmp1;
+        }
+
+//        int n = 6;
+//        double[] arr = {1.52, 23.4, 123.533, 353.123, -123.34 , 0};
         //a
         float a = 0;
         for (int i = 0; i < n; i++) {
@@ -110,24 +110,24 @@ public class Lab01 {
         //Część 2
         System.out.println("\n\nPart 2\n");
 
-        //        System.out.println("Count: ");
-//        Scanner input = new Scanner(System.in);
-//        int n = Integer.parseInt(input.nextLine());
-//
-//        int[] arr = new int[n];
-//
-//
-//        for(int i = 0; i < n; i++){
-//            int tmp1;
-//            int where = i+1;
-//            System.out.println("Number " + where  + ": ");
-//            Scanner dfinput = new Scanner(System.in);
-//            tmp1 = Int.parseInt(dfinput.nextLine());
-//            arr[i] = tmp1;
-//        }
+                System.out.println("Count: ");
+        Scanner input2 = new Scanner(System.in);
+        int n2 = Integer.parseInt(input2.nextLine());
 
-        int n2 = 6;
-        int[] arr2 = {-1, 4, -1, 17, 19, 15};
+        int[] arr2 = new int[n2];
+
+
+        for(int i = 0; i < n2; i++){
+            int tmp1;
+            int where = i+1;
+            System.out.println("Number " + where  + ": ");
+            Scanner dfinput = new Scanner(System.in);
+            tmp1 = Integer.parseInt(dfinput.nextLine());
+            arr[i] = tmp1;
+        }
+
+//        int n2 = 6;
+//        int[] arr2 = {-1, 4, -1, 17, 19, 15};
 
         //Zad1
         //a
@@ -234,8 +234,28 @@ public class Lab01 {
         System.out.println("\nZad3\nzero: " + (ex3_z)+ "\nnegative: "+ ex3);
 
 
+        //Zadanie4
+        double ex4_z = Double.MAX_VALUE;
+        double ex4 = Double.MIN_VALUE;
+        for (double i:
+                arr) {
+            if(ex4 < i){
+                ex4 = i;
+            }
+            if(i < ex4_z){
+                ex4_z = i;
+            }
+        }
+        System.out.println("\nZad4\nminimum: " + (ex4_z)+ "\nmaximum: "+ ex4);
 
 
+        //Zadanie5
+        int result = 0;
+        for(int i = 0; i < n-1; i++){
+            if(arr[i] > 0 && arr[i+1]>0)
+                result++;
+        }
 
+        System.out.println("\nZad5\n  " + result);
     }
 }
