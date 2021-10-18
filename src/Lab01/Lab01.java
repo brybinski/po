@@ -115,7 +115,7 @@ public class Lab01 {
         //Część 2
         System.out.println("\n\nPart 2\n");
 
-                System.out.println("Count: ");
+        System.out.println("Count: ");
         Scanner input2 = new Scanner(System.in);
         int n2 = Integer.parseInt(input2.nextLine());
 
@@ -128,7 +128,7 @@ public class Lab01 {
             System.out.println("Number " + where  + ": ");
             Scanner dfinput = new Scanner(System.in);
             tmp1 = Integer.parseInt(dfinput.nextLine());
-            arr[i] = tmp1;
+            arr2[i] = tmp1;
         }
 
 //        int n2 = 6;
@@ -207,7 +207,7 @@ public class Lab01 {
         //h
         int h2 = 0;
         for (int i = 0; i < n2; i++) {
-            if(Math.abs(arr2[i]) < (i+1)*(i+1));
+            if(Math.abs(arr2[i]) < (i+1)*(i+1))
                 h2++;
         }
         System.out.println("h) "+h2);
