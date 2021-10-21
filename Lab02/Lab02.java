@@ -144,6 +144,7 @@ public class Lab02 {
          //g
          int lewy = 0;
          int prawy = 0;
+
          {
              System.out.println("Input left");
              Scanner input = new Scanner(System.in);
