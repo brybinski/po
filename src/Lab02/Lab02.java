@@ -4,9 +4,126 @@ import java.util.Scanner;
 
 
 public class Lab02 {
+    //a
+    public static int ileNieparzystych(int[] tab){
+        int result = 0;
+             for (int i : tab) {
+                 if (i % 2 != 0)
+                     result++;
+             }
+
+        return result + 1;
+    }
+    public static int ileParzystych(int[] tab){
+        int result = 0;
+        for (int i : tab) {
+            if (i % 2 == 0)
+                result++;
+        }
+
+        return result;
+    }
+
+    //b
+    public static int ileDodatnich(int[] tab){
+             int positive = 0;
+             for (int i : tab) {
+                 if (i > 0)
+                     positive++;
+             }
+             return positive;
+    }
+    public static int ileUjemnych(int[] tab){
+        int negative = 0;
+        for (int i : tab) {
+            if (i < 0)
+                negative++;
+        }
+        return negative;
+    }
+    public static int ileZerowych(int[] tab){
+        int zeroes = 0;
+        for (int i : tab) {
+            if (i < 0)
+                zeroes++;
+        }
+        return zeroes;
+    }
+    //c
+    public static int ileMaksymalnych(int[] tab){
+        int max = Integer.MIN_VALUE;
+        int max_count = 1;
+        for (int i : tab) {
+            if (i >= max) {
+                if (i == max)
+                    max_count++;
+                else {
+                    max = i;
+                    max_count = 1;
+                }
+            }
+        }
+        return max_count;
+    }
+    //d
+    public static int sumaDodatnich(int[] tab){
+        int positive = 0;
+        for (int i : tab) {
+
+            if (i > 0)
+                positive += i;
+        }
+        return positive;
+    }
+    public static int sumaUjemnych(int[] tab){
+        int negative = 0;
+        for (int i : tab) {
+            if (i < 0)
+                negative += i;
+        }
+        return negative;
+    }
+    //e
+    public static int dlugoscMaksymalnegoCiaguDodatnich(int[] tab){
+        int result = 0;
+        int tmp = 0;
+        for (int i : tab) {
+            if (i > 0)
+                tmp++;
+            if (tmp > result)
+                result = tmp;
+            if (i < 1)
+                tmp = 0;
+        }
+        return result;
+    }
+    //f
+    public static void signum(int[] tab){
+
+            for (int i = 0; i < tab.length; i++) {
+                if (tab[i] > 0)
+                    tab[i] = 1;
+                if (tab[i] < 0)
+                    tab[i] = -1;
+            }
+    }
+    //g
+    public static void odwrocFragment(int[] tab, int lewy, int prawy){
+
+        //noinspection IntegerDivisionInFloatingPointContext
+        for(int i = 0; i < Math.floor((prawy-lewy+1)/2); i++)
+        {
+            int val = tab[lewy+i];
+            tab[lewy+i] = tab[prawy-i];
+            tab[prawy-i] = val;
+        }
+    }
 
 
-     static public void main(String[] args) {
+
+    static public void main(String[] args) {
+
+        Tests.testFunctions();
 
          System.out.println("Input number between 1 and 100");
          int n = 0;
@@ -30,7 +147,7 @@ public class Lab02 {
 
          Random generator = new Random(System.currentTimeMillis());
          int[] arr = new int[n];
-         for (int i = 0; i < n; i++) {
+         for (int i = 0; i < arr.length; i++) {
              arr[i] = generator.nextInt() % 10;
          }
 
@@ -43,6 +160,8 @@ public class Lab02 {
              }
              System.out.println("Evens: " + result);
              System.out.println("Odds: " + (n - result));
+             assert result == ileDodatnich(arr);
+
          }
 
          //b
@@ -124,27 +243,26 @@ public class Lab02 {
                  if (i < 1)
                      tmp = 0;
              }
-             System.out.println("Longest even combo: " + result);
+             System.out.println("Longest positive combo: " + result);
          }
 
-         //f
-         {
-             for (int i = 0; i < n; i++) {
-                 if (arr[i] > 0)
-                     arr[i] = 1;
-                 if (arr[i] < 0)
-                     arr[i] = -1;
-             }
-             for (int i : arr) {
-                 System.out.print(String.valueOf(i) + ", ");
-             }
-             System.out.print("\n");
-         }
+        //f
+        {
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] > 0)
+                    arr[i] = 1;
+                if (arr[i] < 0)
+                    arr[i] = -1;
+            }
+            for (int i : arr) {
+                System.out.print(String.valueOf(i) + ", ");
+            }
+            System.out.print("\n");
+        }
 
          //g
          int lewy = 0;
          int prawy = 0;
-
          {
              System.out.println("Input left");
              Scanner input = new Scanner(System.in);
@@ -154,7 +272,7 @@ public class Lab02 {
 
                  try {
                      lewy = Integer.parseInt(input.nextLine());
-                     if (lewy >= 1 && lewy <= n)
+                     if (lewy >= 0 && lewy < n)
                          done = true;
                      else
                          System.out.println("Wrong number");
@@ -163,9 +281,8 @@ public class Lab02 {
                  }
              }
          }
-
-         System.out.println("Input right");
          {
+             System.out.println("Input right");
              Scanner input = new Scanner(System.in);
              boolean done = false;
 
@@ -173,7 +290,7 @@ public class Lab02 {
 
                  try {
                      prawy = Integer.parseInt(input.nextLine());
-                     if (prawy >= lewy && prawy <= n)
+                     if (prawy >= lewy && prawy < arr.length)
                          done = true;
                      else
                          System.out.println("Wrong number");
@@ -181,10 +298,19 @@ public class Lab02 {
                      System.out.println("Something went wrong try again ;)");
                  }
              }
+
          }
 
+        //noinspection IntegerDivisionInFloatingPointContext
+        for(int i = 0; i < Math.floor((prawy-lewy+1)/2); i++)
          {
-
+             int val = arr[lewy+i];
+             arr[lewy+i] = arr[prawy-i];
+             arr[prawy - i] = val;
          }
+         for(int i: arr)
+             System.out.print(i+ ", ");
+
+
     }
 }
