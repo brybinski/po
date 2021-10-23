@@ -12,7 +12,7 @@ public class Lab02 {
                      result++;
              }
 
-        return result + 1;
+        return result;
     }
     public static int ileParzystych(int[] tab){
         int result = 0;
@@ -123,7 +123,6 @@ public class Lab02 {
 
     static public void main(String[] args) {
 
-        Tests.testFunctions();
 
          System.out.println("Input number between 1 and 100");
          int n = 0;
@@ -207,6 +206,7 @@ public class Lab02 {
                      }
                  }
              }
+
              System.out.println("Max: " + max);
              System.out.println("Min: " + min);
              System.out.println("Max count: " + max_count);
@@ -255,7 +255,7 @@ public class Lab02 {
                     arr[i] = -1;
             }
             for (int i : arr) {
-                System.out.print(String.valueOf(i) + ", ");
+                System.out.print(i + ", ");
             }
             System.out.print("\n");
         }
@@ -310,7 +310,6 @@ public class Lab02 {
          }
          for(int i: arr)
              System.out.print(i+ ", ");
-
 
     }
 }
