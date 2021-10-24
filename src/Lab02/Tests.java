@@ -3,11 +3,9 @@ package Lab02;
 import java.util.Random;
 import java.util.Scanner;
 
+@SuppressWarnings("ResultOfMethodCallIgnored")
 public class Tests {
-
-
-
-    public static void testFunctions() {
+    public static boolean functionTests(){
         int n = 6;
         int[] arr = {0, -1, 2, 5, 4, 5};
 
@@ -18,9 +16,9 @@ public class Tests {
                 if (i % 2 == 0)
                     result++;
             }
-            assert result == 3: "Even/Odds is invalid";
-            assert result == Lab02.ileParzystych(arr): "ileParzystych is invalid";
-            assert (n-result) == Lab02.ileNieparzystych(arr): "ileNieparzystych is invalid";
+            if (result != 3) throw new AssertionError(  "Even/Odds test is invalid");
+            if(result != Lab02.ileParzystych(arr)) throw new AssertionError("ileParzystych() is invalid");
+            if((n-result) != Lab02.ileNieparzystych(arr)) throw new AssertionError("ileNieparzystych() is invalid");
         }
         //b
         {
@@ -35,12 +33,12 @@ public class Tests {
                 else
                     negative++;
             }
-            assert zero == 1: "Zeroes count is invalid";
-            assert zero == Lab02.ileZerowych(arr): "ileZerowych() is invalid";
-            assert negative == 1: "Negative count is invalid";
-            assert negative == Lab02.ileUjemnych(arr): "ileUjemnych is invalid";
-            assert positive == 4: "Positive count is invalid";
-            assert positive == Lab02.ileDodatnich(arr): "ileDodatnich() is invalid";
+            if(zero != 1) throw new AssertionError("Zeroes count test is invalid");
+            if(zero != Lab02.ileZerowych(arr)) throw new  AssertionError("ileZerowych() is invalid");
+            if(negative != 1) throw new  AssertionError("Negative count test is invalid");
+            if(negative != Lab02.ileUjemnych(arr)) throw new AssertionError( "ileUjemnych() is invalid");
+            if(positive != 4) throw new AssertionError(  "Positive count test is invalid");
+            if(positive != Lab02.ileDodatnich(arr)) throw new AssertionError(  "ileDodatnich() is invalid");
         }
         //c
         {
@@ -57,16 +55,9 @@ public class Tests {
                         max_count = 1;
                     }
                 }
-                if (i <= min) {
-                    if (i == min)
-                        min_count++;
-                    else {
-                        min = i;
-                        min_count = 1;
-                    }
-                }
             }
-            assert max_count == 2;
+            if(max_count != 2) throw new AssertionError("Max count test is invalid");
+            if(max_count != Lab02.ileMaksymalnych(arr)) throw new AssertionError("ileMaksymalnych() is invalid");
 
         }
         //d
@@ -81,10 +72,10 @@ public class Tests {
                     negative += i;
             }
 
-            assert negative == -1: "Negative sum is invalid";
-            assert negative == Lab02.sumaUjemnych(arr);
-            assert positive == 16: "Positive sum is invalid";
-            assert positive == Lab02.sumaDodatnich(arr);
+            if(negative != -1) throw new AssertionError("Negative sum test is invalid");
+            if(negative != Lab02.sumaUjemnych(arr)) throw new AssertionError("sumaUjemnych() is invalid");
+            if(positive != 16) throw new AssertionError("Positive sum test is invalid");
+            if(positive != Lab02.sumaDodatnich(arr)) throw new AssertionError("sumaDodatnich() is invalid");
         }
 
         //e
@@ -99,46 +90,67 @@ public class Tests {
                 if (i < 1)
                     tmp = 0;
             }
-            assert result == 4: "Max positive combo is invalid";
-            assert result == Lab02.dlugoscMaksymalnegoCiaguDodatnich(arr): "dlugoscMaksymalnegoCiaguDodatniego() is invalid";
+            if(result != 4) throw new AssertionError("Max positive combo test is invalid");
+            if(result != Lab02.dlugoscMaksymalnegoCiaguDodatnich(arr)) throw new AssertionError("dlugoscMaksymalnegoCiaguDodatniego() is invalid");
         }
-
-//        //f
-//        {
-//            for (int i = 0; i < n; i++) {
-//                if (arr[i] > 0)
-//                    arr[i] = 1;
-//                if (arr[i] < 0)
-//                    arr[i] = -1;
-//            }
-//            for (int i : arr) {
-//                System.out.print(String.valueOf(i) + ", ");
-//            }
-//            System.out.print("\n");
-//        }
 
         //g
         int lewy = 1;
         int prawy = 3;
 
-        //noinspection IntegerDivisionInFloatingPointContext
-        for(int i = 0; i < Math.floor((prawy-lewy+1)/2); i++)
+        for(int i = 0; i < (prawy-lewy+1)/2; i++)
         {
             int val = arr[lewy+i];
             arr[lewy+i] = arr[prawy-i];
             arr[prawy - i] = val;
         }
+        //int[] arr = {0, -1, 2, 5, 4, 5};
         {
             int[] test1 = {0, 5, 2, -1, 4, 5};
-            for(int i = 0; i < n; i++)
-                assert arr[i] == test1[i]: "Flipping is invalid";
-            
+            for(int i = 0; i < arr.length; i ++)
+                if(arr[i] != test1[i]) throw new AssertionError("reverse part test is invalid");
+
             int[] test2 = {5, 4, -1, 2, 5, 0};
             Lab02.odwrocFragment(arr, 0, 5);
-
             for(int i = 0; i < n; i++)
-                assert arr[i] == test2[i]: "odwrocFragment() is invalid";
+                if(arr[i] != test2[i]) throw new AssertionError("odwrocFragment() is invalid");
         }
 
+        //f
+
+        {
+
+            int[] tmp = new int[arr.length];
+            System.arraycopy(arr, 0, tmp, 0, arr.length);
+
+            for (int i = 0; i < n; i++) {
+                if (arr[i] > 0)
+                    arr[i] = 1;
+                if (arr[i] < 0)
+                    arr[i] = -1;
+            }
+            int[] test = {1, 1, -1, 1, 1, 0};
+            for(int i = 0; i < arr.length; i++) {
+                if (arr[i] != test[i]) throw new AssertionError("signum test is invalid");
+            }
+
+            Lab02.signum(tmp);
+
+            for(int i = 0; i < arr.length; i++) {
+                if (tmp[i] != test[i]) throw new AssertionError("signum() is invalid");
+            }
+
+        }
+        return true;
+    }
+
+    public static boolean matrixTests(){
+
+        return true;
+    }
+    public static void main(String[] args){
+
+        functionTests();
+        matrixTests();
     }
 }
