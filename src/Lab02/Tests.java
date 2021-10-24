@@ -39,8 +39,6 @@ public class Tests {
         }
         //c
         {
-            int min = Integer.MAX_VALUE;
-            int min_count = 1;
             int max = Integer.MIN_VALUE;
             int max_count = 1;
             for (int i : arr) {
