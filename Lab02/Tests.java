@@ -1,5 +1,4 @@
-package Lab02;
-
+import Lab02.Lab02;
 
 public class Tests {
     public static void functionTests(){
