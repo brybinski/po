@@ -1,5 +1,8 @@
 package Lab04;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class Tests {
     public static void tests(){
         {
@@ -40,6 +43,19 @@ public class Tests {
         {
             if(!(Lab04.betterNice("1000000", ' ', 3).equals("1 000 000")))
                 throw new AssertionError("betterNice() return invalid value");
+        }
+
+        {
+            if(Lab04.chessBoard(3).intValue() != 511)
+                throw new AssertionError("chessBoard() return invalid value");
+        }
+
+        {
+            if(Lab04.countInterest(new BigDecimal(1000), new BigDecimal(6),
+                    new BigDecimal(3)).equals((new BigDecimal("1119.02")).setScale(2, RoundingMode.HALF_EVEN))){
+                                System.out.println(Lab04.countInterest(new BigDecimal(1000), new BigDecimal(6), new BigDecimal(3)).floatValue());
+                                throw new AssertionError("countInterest() return invalid value");
+            }
         }
 
     }

@@ -1,9 +1,12 @@
 package Lab04;
 import java.io.FileInputStream;
 import java.lang.Character;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Scanner;
 import java.math.BigInteger;
 
+@SuppressWarnings({"ThrowablePrintedToSystemOut"})
 public class Lab04 {
 
     public static String consoleStrInput(){
@@ -92,8 +95,10 @@ public class Lab04 {
             if(analyze[i] == sub[0]){
                 isSub = true;
                 for(int j = 1; j < sub.length; j++){
-                    if(analyze[i+j] != sub[j])
+                    if (analyze[i + j] != sub[j]) {
                         isSub = false;
+                        break;
+                    }
                 }
             }
             if(isSub){
@@ -132,9 +137,9 @@ public class Lab04 {
     }
 
     public static String betterNice(String str, char separator, int count){
-        StringBuffer nice = new StringBuffer();
         char[] tmp = str.toCharArray();
         int iter = 0;
+        StringBuffer nice = new StringBuffer();
         for(int i = tmp.length-1; i > 0; i--){
             iter++;
             nice.append(tmp[i]);
@@ -146,6 +151,47 @@ public class Lab04 {
         return nice.toString();
     }
 
+    public static int charCount(String filePath, char chr){
+        try{
+            FileInputStream txt = new FileInputStream(filePath);
+            int i;
+            int charCounter = 0;
+            while ((i = txt.read()) != -1) {
+                if ((char) i == chr)
+                    charCounter++;
+            }
+            txt.close();
+            return charCounter;
+
+        }catch(Exception e){System.out.println(e);}
+        return 0;
+    }
+    public static int wordCount(String filePath, String subStr){
+
+        try{
+            FileInputStream txt = new FileInputStream(filePath);
+            int i;
+            StringBuilder word = new StringBuilder();
+            int wordCounter = 0;
+            while((i = txt.read()) != -1){
+                if((char)i == ' '){
+                    if(word.toString().equals(subStr))
+                        wordCounter++;
+                    word = new StringBuilder();
+                    continue;
+                }
+                word.append((char) i);
+            }
+            if(word.toString().equals(subStr))
+                wordCounter++;
+
+            txt.close();
+            return wordCounter;
+
+        }catch(Exception e){System.out.println(e);}
+        return -1;
+    }
+
     public static BigInteger chessBoard(int n){
         BigInteger result = new BigInteger("2");
         result = result.pow((n*n));
@@ -153,63 +199,31 @@ public class Lab04 {
         return result;
     }
 
+
+
+    public static BigDecimal countInterest(BigDecimal initBal, BigDecimal interest, BigDecimal time){
+        int period = 1; //count of capitalizations in single year
+        BigDecimal one = new BigDecimal(1);
+        BigDecimal denominator = (BigDecimal.valueOf(100*period));
+        BigDecimal toMultiply = (one.add(interest.divide(denominator))).pow((time.intValue())*period);
+        return initBal.multiply(toMultiply).setScale(2, RoundingMode.HALF_EVEN);
+    }
+
+
     public static void main(String[] args){
-//
-//        System.out.println("Please provide absolute path to file");
-//        String filePath = consoleStrInput();
-//        System.out.println("Please provide char to count");
-//        char chr = consoleCharInput();
-//        System.out.println("Please provide substring to count");
-//        String subStr = consoleStrInput();
 
-//        String filePath = "D:\\test.txt";
-//        char chr = 'N';
-//        String subStr = "Nuggets";
-//
-//
-//        try{
-//            {
-//                FileInputStream txt = new FileInputStream(filePath);
-//                {
-//                    int i = 0;
-//                    int charCounter = 0;
-//                    while ((i = txt.read()) != -1) {
-//                        if ((char) i == chr)
-//                            charCounter++;
-//                    }
-//                    System.out.println(charCounter);
-//                }
-//
-//                txt.close();
-//            }
-//
-//            {
-//                FileInputStream txt = new FileInputStream(filePath);
-//                {
-//                    int result = 0;
-//                    int i = 0;
-//                    StringBuilder word = new StringBuilder();
-//                    int wordCounter = 0;
-//                    while((i = txt.read()) != -1){
-//                        if((char)i == ' '){
-//                            if(word.toString().equals(subStr))
-//                                wordCounter++;
-//                            word = new StringBuilder();
-//                            continue;
-//                        }
-//                        word.append((char) i);
-//                    }
-//                    if(word.toString().equals(subStr))
-//                        wordCounter++;
-//
-//                    System.out.println(wordCounter);
-//                }
-//                txt.close();
-//            }
-//
-//        }catch(Exception e){System.out.println(e);}
+        System.out.println("Please provide absolute path to file");
+        String filePath = consoleStrInput();
+        System.out.println("Please provide char to count");
+        char chr = consoleCharInput();
+        System.out.println("Please provide substring to count");
+        String subStr = consoleStrInput();
 
-        System.out.println(chessBoard(3).intValue());
+        System.out.println("Char Count in file");
+        System.out.println(charCount(filePath, chr));
+        System.out.println("Word Count in file");
+        System.out.println(wordCount(filePath, subStr));
+
         Tests.tests();
     }
 }
