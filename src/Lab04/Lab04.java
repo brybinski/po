@@ -216,7 +216,7 @@ public class Lab04 {
         String filePath = consoleStrInput();
         System.out.println("Please provide char to count");
         char chr = consoleCharInput();
-        System.out.println("Please provide substring to count");
+        System.out.println("Please provide word to count");
         String subStr = consoleStrInput();
 
         System.out.println("Char Count in file");
