@@ -28,24 +28,46 @@ public class Lab05 {
         return result;
     }
 
-    public static < E > ArrayList addList(E[] tab){
-        ArrayList<E> result = new ArrayList<E>();
-        for (E i:
-             tab) {
-            result.add(i);
+    // TODO: Fix that error
+    public static  < T extends Comparable<T> > ArrayList mergeSorted(ArrayList<T> a, ArrayList<T> b){
+        ArrayList<T> result = new ArrayList<>();
+        int l = 0;
+        int p = 0;
+        boolean max_l = false;
+        boolean max_p = false;
+        for(int i = 0; i < a.size()+b.size(); i++){
+            
+            if(((a.get(l).compareTo(b.get(p))) < 0 || max_p) && !max_l){
+                result.add(a.get(l));
+                l++;
+                if(l == b.size()){
+                    l--;
+                    max_l = true;
+                }
+            }
+            if((b.get(p).compareTo(a.get(l)) < 0 || max_l )&& !max_p) {
+                result.add(b.get(p));
+                p++;
+                if(p == b.size()){
+                    p--;
+                    max_p = true;
+                }
+            }
         }
         return result;
     }
-
+    
     // TODO: ZAD 3,4,5
     public static void main(String[] Args){
-        Integer[] tmp = {1, 2, 3, 4};
-        ArrayList<Integer> list1 = new ArrayList<Integer>(Arrays.asList(tmp));
+        Double[] tmp = {1.23, 2., 3., 4.};
+        ArrayList<Double> list1 = new ArrayList<Double>(Arrays.asList(tmp));
 
-        Integer[] tmp2 = {1, 2};
-        ArrayList<Integer> list2 = new ArrayList<Integer>(Arrays.asList(tmp2));
+        Double[] tmp2 = {1.34, 2.132};
+        ArrayList<Double> list2 = new ArrayList<Double>(Arrays.asList(tmp2));
         System.out.println(list1);
         System.out.println(append(list1, list1));
-        System.out.println(merge(list2, list1));
+        System.out.println(mergeSorted(list1, list2));
+        
+        
     }
 }
