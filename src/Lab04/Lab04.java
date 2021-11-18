@@ -60,6 +60,7 @@ public class Lab04 {
         {
             boolean isSub = false;
             if(analyze[i] == sub[0]){
+
                 isSub = true;
                 for(int j = 1; j < sub.length; j++){
                     if (analyze[i + j] != sub[j]) {

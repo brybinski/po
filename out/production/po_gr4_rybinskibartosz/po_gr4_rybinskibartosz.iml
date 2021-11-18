@@ -8,6 +8,7 @@
       <excludeFolder url="file://$MODULE_DIR$/Lab00" />
       <excludeFolder url="file://$MODULE_DIR$/Lab01" />
       <excludeFolder url="file://$MODULE_DIR$/Lab02" />
+      <excludeFolder url="file://$MODULE_DIR$/Lab04" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
