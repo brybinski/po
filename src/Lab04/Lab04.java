@@ -167,6 +167,7 @@ public class Lab04 {
         }catch(Exception e){System.out.println(e);}
         return 0;
     }
+
     public static int wordCount(String filePath, String subStr){
 
         try{
@@ -223,7 +224,6 @@ public class Lab04 {
         System.out.println("Char Count in file");
         System.out.println(charCount(filePath, chr));
         System.out.println("Word Count in file");
-        System.out.println(wordCount(filePath, subStr));
 
         Tests.tests();
     }
