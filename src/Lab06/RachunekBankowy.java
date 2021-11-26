@@ -6,7 +6,7 @@ public class RachunekBankowy {
     public static BigDecimal rocznaStopaProcentowa = new BigDecimal("0.05");
     private BigDecimal saldo;
 
-    //TODO: long implementation
+    //TODO: rewrite, I want to make this integer floating point representation just 4fun
     public RachunekBankowy(){
       this.saldo = new BigDecimal("0.") ;
     }
