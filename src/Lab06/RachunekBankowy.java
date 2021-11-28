@@ -3,13 +3,15 @@ import java.math.BigDecimal;
 import java.math.MathContext;
 
 public class RachunekBankowy {
-    public static BigDecimal rocznaStopaProcentowa = new BigDecimal("0.05");
+
+    //TODO: write this as BigInteger floating point number representation
+    public static BigDecimal rocznaStopaProcentowa = new BigDecimal("0.04");
     private BigDecimal saldo;
 
-    //TODO: rewrite, I want to make this integer floating point representation just 4fun
     public RachunekBankowy(){
-      this.saldo = new BigDecimal("0.") ;
+        this.saldo = new BigDecimal("0.") ;
     }
+
     public RachunekBankowy(BigDecimal saldo){
         this.saldo = saldo;
     }
@@ -19,7 +21,6 @@ public class RachunekBankowy {
     }
 
     public BigDecimal obliczMiesieczneOdsetki(){
-        //TODO: even more precision? xD
         BigDecimal capital = (saldo.multiply(rocznaStopaProcentowa)).divide(BigDecimal.valueOf(12), MathContext.DECIMAL128);
         this.saldo = saldo.add(capital);
         return saldo;
@@ -28,6 +29,7 @@ public class RachunekBankowy {
     public static void setRocznaStopaProcentowa(double stopa){
         rocznaStopaProcentowa = new BigDecimal(String.valueOf(stopa));
     }
+
     public static void setRocznaStopaProcentowa(BigDecimal stopa){
         rocznaStopaProcentowa = stopa;
     }
@@ -35,7 +37,16 @@ public class RachunekBankowy {
     public static void main(String[] Args){
         RachunekBankowy saver1 = new RachunekBankowy(2000.);
         RachunekBankowy saver2 = new RachunekBankowy(BigDecimal.valueOf(3000.));
-        setRocznaStopaProcentowa(0.05);
+        RachunekBankowy zero = new RachunekBankowy();
+
         System.out.println(saver1.obliczMiesieczneOdsetki().toString());
+        System.out.println(saver2.obliczMiesieczneOdsetki().toString());
+
+        Lab06.RachunekBankowy.setRocznaStopaProcentowa(0.05);
+        if(!RachunekBankowy.rocznaStopaProcentowa.equals(BigDecimal.valueOf(0.05)))
+            throw new AssertionError("setRocznaStopaProcentowa() does not change rocznaStopaProcentowa");
+
+        System.out.println(saver1.obliczMiesieczneOdsetki().toString());
+        System.out.println(saver2.obliczMiesieczneOdsetki().toString());
     }
 }
