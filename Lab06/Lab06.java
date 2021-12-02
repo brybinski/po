@@ -54,7 +54,7 @@ public class RachunekBankowy {
 }
 
 public class IntegerSet {
-    public boolean[] storage;
+    private boolean[] storage;
 
     public static void verifyArgument(int k){
         if(k < 1)
