@@ -5,6 +5,7 @@ import java.awt.*;
 public class BetterRectangle extends Rectangle{
 
     //I couldn't find better way to pass superclass constructors to subclass
+    //I know I did not have to write all constructors, but I did them just 4fun
     public BetterRectangle(){
         super();
     }

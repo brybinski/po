@@ -23,5 +23,6 @@ public class Tests {
         System.out.println(y.publicboolean());
 
         arr.forEach(n -> {System.out.println(n);});
+
     }
 }

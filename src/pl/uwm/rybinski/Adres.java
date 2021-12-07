@@ -14,7 +14,7 @@ public class Adres {
                  @NotNull String kod_pocztowy, @NotNull String numer_domu,
                  @NotNull String numer_mieszkania){
 
-        if(Stream.of(ulica, miasto, kod_pocztowy, numer_domu, numer_mieszkania).noneMatch(n -> n == null))
+        if(Stream.of(ulica, miasto, kod_pocztowy, numer_domu, numer_mieszkania).anyMatch(n -> n == null))
             throw new NullPointerException("null was given to Adres constructor");
 
         this.ulica = ulica;
@@ -48,7 +48,7 @@ public class Adres {
     }
 
     private static String console_load(){
-        String res = "";
+        String res;
         Scanner input = new Scanner(System.in);
         res = input.nextLine();
         return res;
