@@ -1,4 +1,4 @@
-package pl.uwm.Lab05;
+package pl.uwm.rybinski.Lab05;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,7 +26,7 @@ public class Tests {
     }
 
     public static void appendTest(){
-        ArrayList<Integer> test = pl.uwm.Lab05.append(Tests.list1, Tests.list2);
+        ArrayList<Integer> test = Lab05.append(Tests.list1, Tests.list2);
         integrityCheck("append()");
         Integer[] ans = {1, 4, 6, 8, 2, 5, 6};
         if(!compare(test, ans))
@@ -34,7 +34,7 @@ public class Tests {
     }
 
     public static void mergeTest(){
-        ArrayList<Integer> test = pl.uwm.Lab05.merge(Tests.list1, Tests.list2);
+        ArrayList<Integer> test = Lab05.merge(Tests.list1, Tests.list2);
         integrityCheck("merge()");
         Integer[] ans = {1, 2, 4, 5, 6, 6, 8};
         if(!compare(test, ans))
@@ -42,7 +42,7 @@ public class Tests {
     }
 
     public static void mergeSortedTest(){
-        ArrayList<Integer> test = pl.uwm.Lab05.mergeSorted(Tests.list1, Tests.list2);
+        ArrayList<Integer> test = Lab05.mergeSorted(Tests.list1, Tests.list2);
         integrityCheck("mergeSorted()");
         Integer[] ans = {1, 2, 4, 5, 6, 6, 8};
         if(!compare(test, ans))
@@ -50,7 +50,7 @@ public class Tests {
     }
 
     public static void reversedTest(){
-        ArrayList<Integer> test = pl.uwm.Lab05.reversed(list1);
+        ArrayList<Integer> test = Lab05.reversed(list1);
         integrityCheck("reversed()");
         Integer[] ans = {8, 6, 4, 1};
         if(!compare(test, ans))
@@ -59,8 +59,8 @@ public class Tests {
 
     public static void reverseTest(){
         reversedTest();
-        ArrayList<Integer> test = pl.uwm.Lab05.reversed(list1);
-        pl.uwm.Lab05.reverse(test);
+        ArrayList<Integer> test = Lab05.reversed(list1);
+        Lab05.reverse(test);
         if(!compare(test, Tests.tmp))
             throw new AssertionError("reversed() return invalid values");
     }

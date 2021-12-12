@@ -1,4 +1,5 @@
-import pl.uwm.Lab02.Lab02;
+package pl.uwm.rybinski.Lab02;
+
 
 public class Tests {
     public static void functionTests(){
@@ -13,8 +14,8 @@ public class Tests {
                     result++;
             }
             if (result != 3) throw new AssertionError(  "Even/Odds test is invalid");
-            if(result != pl.uwm.Lab02.ileParzystych(arr)) throw new AssertionError("ileParzystych() return invalid value");
-            if((n-result) != pl.uwm.Lab02.ileNieparzystych(arr)) throw new AssertionError("ileNieparzystych() return invalid value");
+            if(result != Lab02.ileParzystych(arr)) throw new AssertionError("ileParzystych() return invalid value");
+            if((n-result) != Lab02.ileNieparzystych(arr)) throw new AssertionError("ileNieparzystych() return invalid value");
         }
         //b
         {
@@ -30,11 +31,11 @@ public class Tests {
                     negative++;
             }
             if(zero != 1) throw new AssertionError("Zeroes count test is invalid");
-            if(zero != pl.uwm.Lab02.ileZerowych(arr)) throw new  AssertionError("ileZerowych() return invalid value");
+            if(zero != Lab02.ileZerowych(arr)) throw new  AssertionError("ileZerowych() return invalid value");
             if(negative != 1) throw new  AssertionError("Negative count test is invalid");
-            if(negative != pl.uwm.Lab02.ileUjemnych(arr)) throw new AssertionError( "ileUjemnych() return invalid value");
+            if(negative != Lab02.ileUjemnych(arr)) throw new AssertionError( "ileUjemnych() return invalid value");
             if(positive != 4) throw new AssertionError(  "Positive count test is invalid");
-            if(positive != pl.uwm.Lab02.ileDodatnich(arr)) throw new AssertionError(  "ileDodatnich() return invalid value");
+            if(positive != Lab02.ileDodatnich(arr)) throw new AssertionError(  "ileDodatnich() return invalid value");
         }
         //c
         {
@@ -51,7 +52,7 @@ public class Tests {
                 }
             }
             if(max_count != 2) throw new AssertionError("Max count test is invalid");
-            if(max_count != pl.uwm.Lab02.ileMaksymalnych(arr)) throw new AssertionError("ileMaksymalnych() return invalid value");
+            if(max_count != Lab02.ileMaksymalnych(arr)) throw new AssertionError("ileMaksymalnych() return invalid value");
 
         }
         //d
@@ -67,9 +68,9 @@ public class Tests {
             }
 
             if(negative != -1) throw new AssertionError("Negative sum test is invalid");
-            if(negative != pl.uwm.Lab02.sumaUjemnych(arr)) throw new AssertionError("sumaUjemnych() return invalid value");
+            if(negative != Lab02.sumaUjemnych(arr)) throw new AssertionError("sumaUjemnych() return invalid value");
             if(positive != 16) throw new AssertionError("Positive sum test is invalid");
-            if(positive != pl.uwm.Lab02.sumaDodatnich(arr)) throw new AssertionError("sumaDodatnich() return invalid value");
+            if(positive != Lab02.sumaDodatnich(arr)) throw new AssertionError("sumaDodatnich() return invalid value");
         }
 
         //e
@@ -85,7 +86,7 @@ public class Tests {
                     tmp = 0;
             }
             if(result != 4) throw new AssertionError("Max positive combo test is invalid");
-            if(result != pl.uwm.Lab02.dlugoscMaksymalnegoCiaguDodatnich(arr)) throw new AssertionError("dlugoscMaksymalnegoCiaguDodatniego() return invalid value");
+            if(result != Lab02.dlugoscMaksymalnegoCiaguDodatnich(arr)) throw new AssertionError("dlugoscMaksymalnegoCiaguDodatniego() return invalid value");
         }
 
         //g
@@ -105,7 +106,7 @@ public class Tests {
                 if(arr[i] != test1[i]) throw new AssertionError("reverse part test is invalid");
 
             int[] test2 = {5, 4, -1, 2, 5, 0};
-            pl.uwm.Lab02.odwrocFragment(arr, 0, 5);
+            Lab02.odwrocFragment(arr, 0, 5);
             for(int i = 0; i < n; i++)
                 if(arr[i] != test2[i]) throw new AssertionError("odwrocFragment() is invalid");
         }
@@ -128,7 +129,7 @@ public class Tests {
                 if (arr[i] != test[i]) throw new AssertionError("signum test is invalid");
             }
 
-            pl.uwm.Lab02.signum(tmp);
+            Lab02.signum(tmp);
 
             for(int i = 0; i < arr.length; i++) {
                 if (tmp[i] != test[i]) throw new AssertionError("signum() is invalid");
@@ -139,7 +140,7 @@ public class Tests {
 
     public static void matrixTests(){
         {
-            int[][] gentest = pl.uwm.Lab02.generateIntMatrix(12, 12, -10, 10);
+            int[][] gentest = Lab02.generateIntMatrix(12, 12, -10, 10);
             for(int[] ints: gentest){
                 for (int i:
                         ints) {
@@ -158,7 +159,7 @@ public class Tests {
         {
             //transpose test
             int[][] test1 = {{3, 2, 1}, {1, 1, 0}};
-            int[][] transposed_b = pl.uwm.Lab02.transposeMatrix(b);
+            int[][] transposed_b = Lab02.transposeMatrix(b);
             for(int i = 0; i < transposed_b.length; i++){
                 for(int j = 0; j < transposed_b[0].length; j++){
                     if(transposed_b[i][j] != test1[i][j])
@@ -170,14 +171,14 @@ public class Tests {
             //dot product test
             int[] v1 = {1, 0, 2};
             int[] v2 = {3, 2, 1};
-            if (pl.uwm.Lab02.dotProduct(v1, v2) != 5)
+            if (Lab02.dotProduct(v1, v2) != 5)
                 throw new AssertionError("dotProduct() return invalid value");
         }
 
         {
             //multiply matrix test
             int[][] test = {{5, 1}, {4, 2}};
-            int[][] c = pl.uwm.Lab02.multiplyMatrices(a, b);
+            int[][] c = Lab02.multiplyMatrices(a, b);
             for(int i = 0; i < c.length; i++){
                 for(int j = 0; j < c[0].length; j++){
                     if(c[i][j] != test[i][j])

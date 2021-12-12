@@ -1,5 +1,5 @@
 
-package Lab01;
+package pl.uwm.Lab01;
 import java.util.Scanner;
 
 

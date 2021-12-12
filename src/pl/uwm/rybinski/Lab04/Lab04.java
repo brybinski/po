@@ -1,4 +1,4 @@
-package pl.uwm.Lab04;
+package pl.uwm.rybinski.Lab04;
 import java.io.FileInputStream;
 import java.lang.Character;
 import java.math.BigDecimal;

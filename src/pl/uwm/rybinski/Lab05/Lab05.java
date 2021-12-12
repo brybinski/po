@@ -1,4 +1,4 @@
-package pl.uwm.Lab05;
+package pl.uwm.rybinski.Lab05;
 
 import java.util.ArrayList;
 
