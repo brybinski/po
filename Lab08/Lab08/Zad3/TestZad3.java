@@ -7,7 +7,7 @@ import java.util.Arrays;
 public class TestZad3 {
     public static void main(String[] args){
 
-        //I couldn't find this list array class, so I used ArrayList
+        //I couldn't find this list array class
         ArrayList<Instrument> orkiestra = new ArrayList<>(Arrays.asList(
                 new Flet("ktoś", LocalDate.of(2001, 9, 11)),
                 new Skrzypce("coś", LocalDate.of(2677, 2, 5)),
