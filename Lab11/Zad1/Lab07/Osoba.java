@@ -1,4 +1,4 @@
-package pl.uwm.rybinski.Lab07;
+package pl.uwm.rybinski.Lab11.Zad1.Lab07;
 import com.sun.istack.internal.NotNull;
 
 import java.time.Year;
@@ -16,7 +16,7 @@ public class Osoba {
         this.rok_urodzenia = rok_urodzenia;
     }
 
-
+    @Override
     public String toString(){
         return (this.nazwisko + " " + this.rok_urodzenia);
     }

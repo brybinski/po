@@ -1,6 +1,4 @@
-package Lab06;
-import java.util.Arrays;
-import java.util.Objects;
+package pl.uwm.rybinski.Lab11.Zad1.Lab06;
 import java.math.BigDecimal;
 import java.math.MathContext;
 
@@ -77,6 +75,7 @@ public class IntegerSet {
         this.storage[k-1] = false;
     }
 
+    @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();
         boolean empty = true;
@@ -92,6 +91,7 @@ public class IntegerSet {
         return sb.toString();
     }
 
+    @Override
     public boolean equals(IntegerSet check) {
         for (int i = 0; i < this.storage.length; i++) {
             if(this.storage[i] != check.storage[i])

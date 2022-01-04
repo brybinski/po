@@ -1,4 +1,5 @@
-package pl.uwm.rybinski.Lab07;
+package pl.uwm.rybinski.Lab11.Zad1.Lab07;
+
 import java.time.Year;
 import java.util.ArrayList;
 

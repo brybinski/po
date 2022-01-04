@@ -1,4 +1,5 @@
-package pl.uwm.rybinski.Lab08.Zad1;
+package pl.uwm.rybinski.Lab11.Zad1.Lab08.Zad1;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;

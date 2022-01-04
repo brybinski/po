@@ -1,10 +1,10 @@
-package pl.uwm.rybinski.Lab07;
+package pl.uwm.rybinski.Lab11.Zad1.Lab07;
 
 import com.sun.istack.internal.NotNull;
 
 import java.time.Year;
 
-public class Student extends Osoba{
+public class Student extends Osoba {
     private String kierunek;
 
     public Student(@NotNull String nazwisko, @NotNull Year rok_urodzenia, @NotNull String kierunek) {
@@ -15,6 +15,7 @@ public class Student extends Osoba{
         this.kierunek = kierunek;
     }
 
+    @Override
     public String toString(){
         return super.toString() + " " + this.kierunek;
     }

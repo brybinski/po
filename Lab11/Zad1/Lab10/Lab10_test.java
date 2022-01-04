@@ -1,4 +1,5 @@
-package pl.uwm.rybinski.Lab10;
+package pl.uwm.rybinski.Lab11.Zad1.Lab10;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;

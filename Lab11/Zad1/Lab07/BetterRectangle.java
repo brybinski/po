@@ -1,5 +1,7 @@
-package pl.uwm.rybinski.Lab07;
+package pl.uwm.rybinski.Lab11.Zad1.Lab07;
+
 import com.sun.istack.internal.NotNull;
+
 import java.awt.*;
 
 public class BetterRectangle extends Rectangle{

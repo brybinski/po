@@ -1,6 +1,7 @@
-package pl.uwm.rybinski.Lab07;
+package pl.uwm.rybinski.Lab11.Zad1.Lab07;
 
 import com.sun.istack.internal.NotNull;
+
 import java.time.Year;
 
 public class Nauczyciel extends Osoba {
@@ -12,6 +13,7 @@ public class Nauczyciel extends Osoba {
         this.pensja = pensja;
     }
 
+    @Override
     public String toString() {
         return (super.toString() + " " + this.pensja);
     }

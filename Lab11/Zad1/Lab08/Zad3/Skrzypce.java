@@ -1,4 +1,4 @@
-package pl.uwm.rybinski.Lab08.Zad3;
+package pl.uwm.rybinski.Lab11.Zad1.Lab08.Zad3;
 
 import java.time.LocalDate;
 import java.util.Objects;

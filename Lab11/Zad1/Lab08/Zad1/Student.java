@@ -1,11 +1,12 @@
-package pl.uwm.rybinski.Lab08.Zad1;
+package pl.uwm.rybinski.Lab11.Zad1.Lab08.Zad1;
 import com.sun.istack.internal.NotNull;
+
 import java.time.LocalDate;
 
 public class Student extends Osoba {
     private String kierunek;
     private double sredniaOcen;
-    public Student(@NotNull String nazwisko, @NotNull Osoba.gender plec,
+    public Student(@NotNull String nazwisko, @NotNull gender plec,
                    @NotNull LocalDate dataUrodzenia, String[] imiona, @NotNull String kierunek,
                    double sredniaOcen) {
         super(nazwisko, plec, dataUrodzenia, imiona);
@@ -20,7 +21,7 @@ public class Student extends Osoba {
         this.kierunek = kierunek;
     }
 
-
+    @Override
     public String toString(){
         return String.join(delimiter,
                 super.toString(), this.kierunek, String.valueOf(this.sredniaOcen));

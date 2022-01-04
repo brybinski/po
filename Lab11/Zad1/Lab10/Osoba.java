@@ -1,6 +1,8 @@
-package pl.uwm.rybinski.Lab10;
+package pl.uwm.rybinski.Lab11.Zad1.Lab10;
+
 import com.sun.istack.internal.NotNull;
 import pl.uwm.rybinski.Global;
+
 import java.text.Collator;
 import java.time.LocalDate;
 import java.util.Locale;
@@ -50,6 +52,7 @@ public class Osoba implements Comparable<Osoba>, Cloneable{
         return new Osoba(this.nazwisko, this.dataUrodzenia);
     }
 
+    @Override
     public String toString() {
         return "Osoba[" + String.join(Global.delimiter, this.nazwisko, this.dataUrodzenia.toString()) + "]";
     }
