@@ -57,21 +57,20 @@ public class ArrayUtil {
 
     private static <T extends Comparable<T>> void merge(T[] tab, int l, int m, int p, T[] t)
     {
-        int i, j;
+        int left, right;
 
-        for(i = m + 1; i > l; i--)
-            t[i-1] = tab[i-1];
+        for(left = m + 1; left > l; left--)
+            t[left-1] = tab[left-1];
 
-        for(j = m; j < p; j++)
-            t[p+m-j] = tab[j+1];
+        for(right = m; right < p; right++)
+            t[p+m-right] = tab[right+1];
 
 
-
-        for(int k = l; k <= p; k++)
-            if(t[j].compareTo(t[i]) < 0)
-                tab[k] = t[j--];
+        for(int i = l; i <= p; i++)
+            if(t[right].compareTo(t[left]) < 0)
+                tab[i] = t[right--];
             else
-                tab[k] = t[i++];
+                tab[i] = t[left++];
 
     }
 
@@ -106,7 +105,7 @@ public class ArrayUtil {
         System.out.println(isSorted(tab2));
         System.out.println(Arrays.toString(tab1));
         System.out.println(Arrays.toString(tab2));
-        //System.out.println(binSearch(tab1, 7));
+        System.out.println(binSearch(tab1, 7));
         System.out.println(binSearch(tab2, LocalDate.of(2000,11,3)));
 
 
