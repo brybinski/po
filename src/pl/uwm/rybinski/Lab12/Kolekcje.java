@@ -4,6 +4,8 @@ import java.util.*;
 import java.util.stream.Stream;
 
 public class Kolekcje {
+
+    //Zad 1,2
     public static <T> void redukuj(LinkedList<T> pracownicy, int n){
         if(n == 0)
             throw new ArithmeticException("division by zero");
@@ -25,6 +27,7 @@ public class Kolekcje {
         while(i.hasNext());
     }
 
+    //Zad 3,4
     public static <T> void odwroc(LinkedList<T> lista){
         int a = lista.indexOf(lista.getFirst());
         int b = lista.indexOf(lista.getLast());
@@ -38,7 +41,7 @@ public class Kolekcje {
         }
     }
 
-
+    //Zad 5
     public static String reverseText(String txt){
        ArrayList<Stack<String>> sentence_list = new ArrayList<Stack<String>>();
 
@@ -86,6 +89,7 @@ public class Kolekcje {
         return buf.toString();
     }
 
+    //Zad6
     public static void printInt(int number){
         Stack<Integer> stck = new Stack<Integer>();
         while(number >= 1){
@@ -97,6 +101,7 @@ public class Kolekcje {
         }
     }
 
+    //Zad7
     public static ArrayList<Integer> sitoGreka(int n){
         ArrayList<Integer> table = new ArrayList<>();
 
@@ -124,18 +129,29 @@ public class Kolekcje {
         return table;
     }
 
+    //Zad8
+    public static <T> void print(Iterable<T> collection){
+        StringBuffer buf = new StringBuffer();
+        collection.forEach((n) -> buf.append(n.toString()).append(','));
+
+        buf.deleteCharAt(buf.length()-1);
+        System.out.println(buf.toString());
+    }
 
     public static void main(String[] Args){
         LinkedList<String> test1 = new LinkedList<>();
         test1.addAll(0, Arrays.asList("1", "2", "3", "4", "5", "6", "7", "8", "9", "10"));
 
-        odwroc(test1);
         redukuj(test1, 3);
-        System.out.println(test1 +"\n");
+        System.out.println(test1);
+        odwroc(test1);
+        System.out.println(test1);
         System.out.println(reverseText("Ala ma kota. Jej kot lubi myszy."));
         System.out.println(sitoGreka(17));
 
         Scanner sc = new Scanner(System.in);
         printInt(sc.nextInt());
+
+        print(test1);
     }
 }
