@@ -1,5 +1,10 @@
-<h1>egzamin-PO</h1> 
-Repo na egzamin z programowania obiektowego/zadanie z wykładu
+<h1>repo-PO Bartosza Rybińskiego</h1> 
+
+<h2>Repo na:<br> </h2>
+
+– egzamin z programowania obiektowego<br>
+– zadania z wykładu<br>
+– zadania z labów
 
 <h3>Dla HashSet:</h3>
 
