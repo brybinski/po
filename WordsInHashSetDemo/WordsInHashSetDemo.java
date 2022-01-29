@@ -17,7 +17,7 @@ public class WordsInHashSetDemo
 
 
         try {
-            File f = new File("C:\\Users\\barto\\OneDrive - University of Warmia and Mazuria in Olsztyn\\Pulpit 1\\egzamin-PO\\E1-RybinskiBartosz\\src\\WordsInHashSetDemo\\alice30.txt");
+            File f = new File("C:\\Users\\barto\\OneDrive - University of Warmia and Mazuria in Olsztyn\\Pulpit 1\\PO repo\\po_gr4_rybinskibartosz\\WordsInHashSetDemo\\alice30.txt");
             Scanner in = new Scanner(f);
 
             while (in.hasNext()) {
