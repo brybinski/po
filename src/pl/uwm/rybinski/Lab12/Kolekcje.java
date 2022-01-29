@@ -1,5 +1,7 @@
 package pl.uwm.rybinski.Lab12;
 
+import javax.swing.*;
+import java.io.*;
 import java.util.*;
 import java.util.stream.Stream;
 
@@ -138,6 +140,35 @@ public class Kolekcje {
         System.out.println(buf.toString());
     }
 
+    public static void reverseTxtFile(String path) {
+
+        ArrayList<String> toRev = new ArrayList<>();
+        try (BufferedReader br
+                     = new BufferedReader(new FileReader(path))){
+            String line;
+            while ((line = br.readLine()) != null){
+                toRev.add(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        File file = new File(path);
+
+        try (BufferedWriter bw
+                     = new BufferedWriter(new FileWriter(path))){
+            for(String i: toRev){
+                String tmp = reverseText(i);
+                bw.write(tmp+"\n");
+            }
+        }
+
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     public static void main(String[] Args){
         LinkedList<String> test1 = new LinkedList<>();
         test1.addAll(0, Arrays.asList("1", "2", "3", "4", "5", "6", "7", "8", "9", "10"));
@@ -149,9 +180,11 @@ public class Kolekcje {
         System.out.println(reverseText("Ala ma kota. Jej kot lubi myszy."));
         System.out.println(sitoGreka(17));
 
-        Scanner sc = new Scanner(System.in);
-        printInt(sc.nextInt());
+//        Scanner sc = new Scanner(System.in);
+//        printInt(sc.nextInt());
 
         print(test1);
+
+        reverseTxtFile("D:\\test.txt");
     }
 }
